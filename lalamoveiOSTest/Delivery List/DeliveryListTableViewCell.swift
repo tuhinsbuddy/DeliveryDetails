@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import Kingfisher
+import SDWebImage
 
 class DeliveryListTableViewCell: UITableViewCell {
     private let detailImage: UIImageView = UIImageView()
     private let lblDetails: UILabel = UILabel()
     private let superBackView: UIView = UIView()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         detailImage.translatesAutoresizingMaskIntoConstraints = false
         lblDetails.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +71,7 @@ extension DeliveryListTableViewCell{
         }
         
         if let imageUrl = responseVal.imageUrl, !imageUrl.isEmpty{
-            detailImage.kf.setImage(with: URL(string: imageUrl))
+            detailImage.sd_setImage(with: URL(string: imageUrl))
         } else {
             detailImage.image = nil
         }

@@ -8,7 +8,8 @@ target 'lalamoveiOSTest' do
   # Pods for lalamoveiOSTest
     pod 'GoogleMaps'
     pod 'Alamofire'
-    pod 'Kingfisher'
+#    pod 'Kingfisher', '~> 4.9.0'
+    pod 'SDWebImage'
 
   target 'lalamoveiOSTestTests' do
     inherit! :search_paths

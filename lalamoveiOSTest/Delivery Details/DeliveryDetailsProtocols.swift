@@ -8,17 +8,12 @@
 
 import Foundation
 
-//MARK: Wireframe -
-protocol DeliveryDetailsWireframeProtocol: class {
-
-}
-
-//MARK: Presenter -
+//MARK: Presenter Protocol
 protocol DeliveryDetailsPresenterProtocol: class {
     func loadView()
 }
 
-//MARK: View -
+//MARK: View Protocol
 protocol DeliveryDetailsViewProtocol: class {
     var presenter: DeliveryDetailsPresenterProtocol?  { get set }
 }

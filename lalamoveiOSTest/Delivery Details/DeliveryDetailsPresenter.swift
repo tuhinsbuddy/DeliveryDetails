@@ -8,7 +8,7 @@
 
 import UIKit
 import GoogleMaps
-import Kingfisher
+import SDWebImage
 
 class DeliveryDetailsPresenter: DeliveryDetailsPresenterProtocol {
     
@@ -83,7 +83,7 @@ extension DeliveryDetailsPresenter{
         viewController.lblDetails.trailingAnchor.constraint(equalTo: viewController.detailsSuperView.trailingAnchor, constant: 5).isActive = true
         viewController.lblDetails.numberOfLines = 0
         if let imageUrl = deliveryListData.imageUrl, !imageUrl.isEmpty{
-            viewController.detailImage.kf.setImage(with: URL(string: imageUrl))
+            viewController.detailImage.sd_setImage(with: URL(string: imageUrl))
         } else {
             viewController.detailImage.image = nil
         }

@@ -8,23 +8,24 @@
 
 import Foundation
 
-//MARK: Presenter -
+//MARK: Presenter Protocol
 protocol DeliveryListPresenterProtocol: class {
     var interactor: DeliveryListInteractorInputProtocol? { get set }
     func loadView()
 }
 
-//MARK: Interactor -
+//MARK: Interactor Output Protocol
 protocol DeliveryListInteractorOutputProtocol: class {
     func serverDataResponse(data response: [DeliveryListData]?)
 }
 
+//MARK: Interactor Input Protocol
 protocol DeliveryListInteractorInputProtocol: class {
     var presenterOutput: DeliveryListInteractorOutputProtocol?  { get set }
     func getServerResponse(api apiValue: String, header headerData: [String: String])
 }
 
-//MARK: View -
+//MARK: View Protocol
 protocol DeliveryListViewProtocol: class {
     var presenter: DeliveryListPresenterProtocol?  { get set }
 }

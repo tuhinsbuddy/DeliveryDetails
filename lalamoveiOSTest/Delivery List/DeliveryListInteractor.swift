@@ -17,14 +17,14 @@ class DeliveryListInteractor: DeliveryListInteractorInputProtocol {
         case true:
             guard !headerData.isEmpty, !apiValue.isEmpty else {return}
             Alamofire.request(apiValue, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headerData).responseJSON(completionHandler: { response in switch response.result {
-                
+
             case .success(_):
                 guard let receivedData = response.result.value,
                     let statusCode = response.response?.statusCode, statusCode == 200 else {
                         self.processResponseData(with: nil)
                         return
                 }
-                
+
                 do {
                     let dataResponse = try JSONSerialization.data(withJSONObject: receivedData, options: .prettyPrinted)
                     self.processResponseData(with: dataResponse)
@@ -32,8 +32,8 @@ class DeliveryListInteractor: DeliveryListInteractorInputProtocol {
                 } catch {
                     self.processResponseData(with: nil)
                 }
-                
-                
+
+
             case .failure(_):
                 self.processResponseData(with: nil)
             }

@@ -47,7 +47,7 @@ private extension DeliveryListPresenter{
         viewController.deliveryListTable.showsVerticalScrollIndicator = false
         viewController.deliveryListTable.backgroundColor = .clear
         viewController.deliveryListTable.register(DeliveryListTableViewCell.self, forCellReuseIdentifier: "cell")
-        viewController.deliveryListTable.rowHeight = UITableViewAutomaticDimension
+        viewController.deliveryListTable.rowHeight = UITableView.automaticDimension
         viewController.deliveryListTable.estimatedRowHeight = 100
         viewController.deliveryListTable.delegate = viewController
         viewController.deliveryListTable.dataSource = viewController

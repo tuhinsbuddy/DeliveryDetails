@@ -6,6 +6,7 @@
 //  Copyright © 2018 Tuhin S. All rights reserved.
 //
 
+import Foundation
 import GoogleMaps
 
 final class MapsManager: NSObject {
